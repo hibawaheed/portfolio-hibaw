@@ -1,0 +1,418 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0, 0%, 0%;
+  --foreground: 0, 0%, 100%;
+  --card: 215, 25%, 7%;
+  --card-foreground: 0, 0%, 100%;
+  --primary: 172, 66%, 50%;
+  --primary-foreground: 0, 0%, 100%;
+  --secondary: 217, 19%, 27%;
+  --secondary-foreground: 0, 0%, 100%;
+  --accent: 172, 66%, 50%;
+  --accent-foreground: 0, 0%, 100%;
+  --destructive: 0, 84%, 60%;
+  --destructive-foreground: 0, 0%, 100%;
+  --border: 217, 19%, 27%;
+  --input: 217, 19%, 27%;
+  --ring: 172, 66%, 50%;
+  --radius: 0.5rem;
+}
+
+/* Import code-like fonts */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-gray-950 text-white;
+}
+
+/* Code-like typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: -0.03em;
+}
+
+p,
+li,
+a,
+button,
+span {
+  font-family: "Fira Code", monospace;
+  letter-spacing: -0.01em;
+}
+
+.code-text {
+  font-family: "Fira Code", monospace;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.code-text::before {
+  content: ">";
+  color: #4afa80;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.code-block {
+  position: relative;
+  border-radius: 0.5rem;
+  background-color: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(74, 250, 128, 0.2);
+  padding: 2rem 1rem 1rem;
+  font-family: "Fira Code", monospace;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .code-block {
+    padding: 2rem 1.5rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+}
+
+.code-block::before {
+  content: "...";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.75rem;
+  background-color: rgba(17, 24, 39, 0.9);
+  border-bottom: 1px solid rgba(74, 250, 128, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  padding: 0.25rem 1rem;
+  letter-spacing: 0.2em;
+}
+
+.terminal-text {
+  font-family: "JetBrains Mono", monospace;
+  color: #4afa80;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.terminal-text::before {
+  content: "$";
+  position: absolute;
+  left: 0;
+  color: #4afa80;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Custom cursor only on larger screens */
+@media (min-width: 768px) {
+  html {
+    cursor: default;
+  }
+}
+
+/* Utility classes */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle at center, rgba(20, 184, 166, 0.15), transparent 70%);
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(20, 184, 166, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 184, 166, 0.05) 1px, transparent 1px);
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent;
+}
+
+/* Neon highlight effect - more vibrant neon green */
+.neon-highlight {
+  display: inline-block;
+  position: relative;
+  color: #4afa80; /* Brighter green */
+  font-weight: 600;
+  padding: 0.15rem 0.25rem;
+  z-index: 1;
+  font-family: "JetBrains Mono", monospace;
+  margin: 0 0.125rem;
+  font-size: 0.9em;
+}
+
+@media (min-width: 768px) {
+  .neon-highlight {
+    padding: 0.25rem 0.5rem;
+    font-size: 1em;
+  }
+}
+
+.neon-highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.8); /* Dark background */
+  border-radius: 0.25rem;
+  z-index: -1;
+  box-shadow: 0 0 8px rgba(74, 250, 128, 0.6), inset 0 0 4px rgba(74, 250, 128, 0.4);
+  border: 1px solid rgba(74, 250, 128, 0.4);
+}
+
+@media (min-width: 768px) {
+  .neon-highlight::before {
+    box-shadow: 0 0 12px rgba(74, 250, 128, 0.6), inset 0 0 6px rgba(74, 250, 128, 0.4);
+  }
+}
+
+.neon-highlight:hover {
+  color: #86ffac; /* Even brighter on hover */
+}
+
+.neon-highlight:hover::before {
+  background-color: rgba(17, 24, 39, 0.9);
+  box-shadow: 0 0 12px rgba(74, 250, 128, 0.8), inset 0 0 6px rgba(74, 250, 128, 0.6);
+}
+
+@media (min-width: 768px) {
+  .neon-highlight:hover::before {
+    box-shadow: 0 0 16px rgba(74, 250, 128, 0.8), inset 0 0 8px rgba(74, 250, 128, 0.6);
+  }
+}
+
+/* Blinking cursor effect */
+.cursor-blink::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+  color: #4afa80;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Matrix-like background effect */
+.matrix-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='20' font-family='monospace' font-size='10' fill='%2300ff00' opacity='0.2'%3E01%3C/text%3E%3Ctext x='30' y='40' font-family='monospace' font-size='10' fill='%2300ff00' opacity='0.1'%3E10%3C/text%3E%3Ctext x='50' y='60' font-family='monospace' font-size='10' fill='%2300ff00' opacity='0.2'%3E01%3C/text%3E%3Ctext x='70' y='80' font-family='monospace' font-size='10' fill='%2300ff00' opacity='0.1'%3E10%3C/text%3E%3C/svg%3E");
+  z-index: -1;
+  opacity: 0.05;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  1% {
+    transform: translate(-2px, 2px);
+  }
+  2% {
+    transform: translate(2px, -2px);
+  }
+  3% {
+    transform: translate(0);
+  }
+  95% {
+    transform: translate(0);
+  }
+  96% {
+    transform: translate(-2px, 2px);
+  }
+  97% {
+    transform: translate(2px, -2px);
+  }
+  98% {
+    transform: translate(0);
+  }
+}
+
+/* Fix for tab centering */
+.tab-button {
+  @apply rounded-lg py-2 md:py-3 text-sm md:text-lg flex items-center justify-center h-full;
+}
+
+/* Add these styles for the tabs */
+[data-state="active"].tab-button {
+  @apply text-[#4afa80];
+  @apply relative;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+[data-state="active"].tab-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #4afa80;
+  box-shadow: 0 0 8px #4afa80, 0 0 12px #4afa80;
+}
+
+[data-radix-collection-item] {
+  background: transparent !important;
+}
+
+/* Add styles for the blog post content */
+.prose h2 {
+  @apply text-xl md:text-2xl font-bold text-teal-400 mb-3 md:mb-4 mt-6 md:mt-8;
+}
+
+.prose h3 {
+  @apply text-lg md:text-xl font-semibold text-white mb-2 md:mb-3 mt-4 md:mt-6;
+}
+
+.prose h4 {
+  @apply text-base md:text-lg font-medium text-teal-300 mb-2 mt-3 md:mt-4;
+}
+
+.prose p {
+  @apply text-gray-300 mb-3 md:mb-4 leading-relaxed text-sm md:text-base;
+}
+
+.prose ul {
+  @apply list-disc pl-5 md:pl-6 mb-3 md:mb-4 text-gray-300 space-y-1 md:space-y-2 text-sm md:text-base;
+}
+
+.prose li {
+  @apply text-gray-300 text-sm md:text-base;
+}
+
+/* Add this to your existing CSS file */
+.shadow-glow {
+  box-shadow: 0 0 8px #4afa80, 0 0 12px #4afa80;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .code-text {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  .terminal-text {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  /* Improve tap targets for mobile */
+  button,
+  a {
+    min-height: 40px;
+  }
+
+  /* Adjust padding for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Ensure proper spacing on mobile */
+  .py-28 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Fix for mobile overflow issues */
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  /* Reduce padding in cards for mobile */
+  .card-content {
+    padding: 1rem;
+  }
+
+  /* Make sure images don't overflow on mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Improve blog post readability on mobile */
+.prose {
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.95rem;
+  }
+
+  .prose h2 {
+    font-size: 1.4rem;
+  }
+
+  .prose h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Fix for neon highlight on small screens */
+  .neon-highlight {
+    margin: 0 0.1rem;
+    padding: 0.1rem 0.2rem;
+  }
+}
