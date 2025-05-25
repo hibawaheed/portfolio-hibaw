@@ -70,7 +70,7 @@ export default function AboutPageClient() {
         <SlideInRight className="relative flex items-center justify-center">
           <div className="absolute inset-0 z-0 rounded-2xl bg-gradient-to-r from-teal-500/20 to-emerald-500/20 blur-3xl" />
           <div className="relative z-10 h-full w-full overflow-hidden rounded-2xl border border-teal-500/30 bg-gray-900/50 p-8">
-            {/* Happy Sun display */}
+            {/* happy sun yay*/}
             <div className="flex flex-col h-[280px]">
               <div className="flex-grow flex items-center justify-center">
                 <HappySun className="h-[220px] w-[220px]" />
@@ -86,9 +86,9 @@ export default function AboutPageClient() {
         </SlideInRight>
       </div>
 
-      {/* CV Content */}
+      {/* CV Content :c */}
       <ScrollAnimation className="mb-16">
-        {/* Header with download button */}
+        {/* Header */}
         <div className="mb-12 flex items-center justify-between">
           <h2 className="text-3xl font-bold text-white">
             Curriculum <span className="text-teal-400">Vitae</span>
