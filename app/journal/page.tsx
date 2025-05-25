@@ -13,7 +13,7 @@ import TridentWeaponModel from "@/components/trident-weapon-model"
 export default function JournalPage() {
   const [selectedItem, setSelectedItem] = useState(null)
 
-  // DIRECTLY EDIT THESE BLOG POSTS - Changes will be reflected when you deploy
+
   const blogPosts = [
     {
       id: 1,
@@ -50,7 +50,6 @@ export default function JournalPage() {
       readTime: "3 min read",
       tags: ["💩", "Why", "Proetry"],
       type: "blog",
-      // Using a placeholder image URL that should work anywhere
       image: "https://i.ibb.co/HLRw45dj/birthday.jpg",
       content: `
       <h2>Just You</h2>
@@ -139,7 +138,6 @@ export default function JournalPage() {
       readTime: "4 min read",
       tags: ["Desperate", "Energy Drinks", "Al-Fatah sucks"],
       type: "blog",
-      // Using a placeholder image URL that should work anywhere
       image: "https://i.ibb.co/Y7rrH9HV/monster.jpg",
       content: `
       <h2>In the Aisles of Al-Fatah, I Lost My Will to Live</h2>
@@ -161,7 +159,6 @@ export default function JournalPage() {
     },
   ]
 
-  // DIRECTLY EDIT THESE PHOTOS - Changes will be reflected when you deploy
   const photos = [
     {
       id: 1,
@@ -169,7 +166,6 @@ export default function JournalPage() {
       description: "I was a cool baby vro",
       date: "2011",
       type: "photo",
-      // Using a placeholder image URL that should work anywhere
       image: "https://i.ibb.co/WvdHD3v3/Tuff-Baby.jpg",
     },
     {
@@ -178,7 +174,6 @@ export default function JournalPage() {
       description: "MI REDBULL PULL TAB GAWN",
       date: "30 April, 2025",
       type: "photo",
-      // Using a placeholder image URL that should work anywhere
       image: "https://i.ibb.co/1G7fdBdG/redbull.jpg",
     },
     {
@@ -187,7 +182,6 @@ export default function JournalPage() {
       description: "They gave the burnt piece tho",
       date: "2 April, 2025",
       type: "photo",
-      // Using a placeholder image URL that should work anywhere
       image: "https://i.ibb.co/XxCH22Q7/rocky.jpg",
     },
     {
@@ -196,12 +190,10 @@ export default function JournalPage() {
       description: "He checking himself out",
       date: "11 April, 2025",
       type: "photo",
-      // Using a placeholder image URL that should work anywhere
       image: "https://i.ibb.co/rDtHhyP/rocky1.jpg",
     },
   ]
 
-  // DIRECTLY EDIT THESE THOUGHTS - Changes will be reflected when you deploy
   const randomThoughts = [
     {
       id: 1,
@@ -227,11 +219,9 @@ export default function JournalPage() {
   return (
     <div className="container mx-auto px-4 py-28">
       <FadeIn>
-        {/* EDIT THIS TEXT DIRECTLY */}
         <h1 className="mb-4 text-center text-4xl font-bold text-white md:text-5xl glitch">
          Midnight <span className="text-teal-400">Journal</span>
         </h1>
-        {/* EDIT THIS TEXT DIRECTLY */}
         <p className="mb-16 text-center text-xl text-gray-400 code-text">
          A collection of rants, cursed content, and sleep-disrupting nonsense. You're welcome.
         </p>
@@ -294,15 +284,13 @@ export default function JournalPage() {
         <div className="h-80">
           <TridentWeaponModel className="h-full w-full" />
         </div>
-        {/* EDIT THIS TEXT DIRECTLY */}
         <h3 className="mb-4 text-2xl font-medium text-white terminal-text">More content coming soon!</h3>
-        {/* EDIT THIS TEXT DIRECTLY */}
         <p className="text-lg text-gray-400">
           I'm jobless so this section is constantly updated the most! Check again later for another update :3
         </p>
       </FadeIn>
 
-      {/* Full Item Slide-In */}
+
       <AnimatePresence>
         {selectedItem && (
           <motion.div
@@ -366,7 +354,7 @@ export default function JournalPage() {
                     </div>
                   </div>
 
-                  {/* Using regular HTML img tag for full-size photo */}
+
                   <div className="relative w-full mb-6">
                     <img
                       src={selectedItem.image || "https://placehold.co/800x600/333/teal?text=Full+Photo"}
@@ -394,7 +382,6 @@ function renderCard(item: any, setSelectedPost: any) {
         className="border-gray-800 bg-gray-900/50 transition-all hover:border-teal-500/50 hover:-translate-y-2 duration-300"
       >
         <div className="relative h-48 w-full">
-          {/* Using regular HTML img tag for blog thumbnail */}
           <img
             src={item.image || "https://placehold.co/600x400/333/teal?text=Blog+Post"}
             alt={item.title}
@@ -441,7 +428,6 @@ function renderCard(item: any, setSelectedPost: any) {
         onClick={() => setSelectedPost(item)}
       >
         <div className="relative h-56 w-full">
-          {/* Using regular HTML img tag for photo thumbnail */}
           <img
             src={item.image || "https://placehold.co/600x400/333/teal?text=Photo"}
             alt={item.title}
