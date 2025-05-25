@@ -4,14 +4,12 @@ import CatFace from "@/components/cat-face"
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/animations"
 
 export default function ProjectsPage() {
-  // DIRECTLY EDIT THESE PROJECTS - Changes will be reflected when you deploy
   const projects = [
     {
       id: 1,
       title: "Personal Portfolio Website",
       description:
         "Designed and developed a personal portfolio website using Next.js, Tailwind CSS, and Three.js for 3D elements.",
-      // Using a placeholder image URL that should work anywhere
       image: "https://i.ibb.co/wZCCcG7G/image.png",
       date: "May 2025",
       tags: ["Next.js", "Tailwind CSS", "Three.js"],
@@ -23,7 +21,6 @@ export default function ProjectsPage() {
       id: 2,
       title: "LUMS PSIFI - Godot",
       description: "An overnight project made for the final round of Techwars at LUMSPSIFI 2024",
-      // Using a placeholder image URL that should work anywhere
       image: "https://i.ibb.co/twKxg8Zf/game.png",
       date: "December 2024",
       tags: ["Godot", "2D"],
@@ -33,13 +30,11 @@ export default function ProjectsPage() {
     },
   ]
 
-  // DIRECTLY EDIT THESE SECTION TITLES - Changes will be reflected when you deploy
   const hero = {
     title: "My Projects",
     subtitle: "A collection of my best work.",
   }
-
-  // DIRECTLY EDIT THIS CAT SECTION - Changes will be reflected when you deploy
+  
   const catSection = {
     title: "Greedy Rocky",
     description: "A 3D Mouse tracking model, that rocky does not approve of.",
@@ -47,7 +42,6 @@ export default function ProjectsPage() {
 
   return (
     <div className="container mx-auto px-4 py-28">
-      {/* Hero Section with Heading - Added back as requested */}
       <FadeIn>
         <h1 className="mb-4 text-center text-4xl font-bold text-white md:text-5xl glitch">
           My <span className="text-teal-400">Projects</span>
@@ -55,7 +49,6 @@ export default function ProjectsPage() {
         <p className="mb-16 text-center text-xl text-gray-400 code-text">{hero.subtitle}</p>
       </FadeIn>
 
-      {/* Cat Face Section */}
       <FadeIn className="mb-16 rounded-2xl border border-teal-500/30 bg-gray-900/50 p-8">
         <h2 className="mb-8 text-center text-3xl font-bold text-white">{catSection.title}</h2>
         <p className="mb-8 text-center text-lg text-gray-400 terminal-text">{catSection.description}</p>
@@ -67,7 +60,6 @@ export default function ProjectsPage() {
           <StaggerItem key={project.id}>
             <div className="overflow-hidden rounded-xl border border-gray-800 bg-gray-900/50 transition-all hover:border-teal-500/50 hover:-translate-y-2 duration-300">
               <div className="relative h-48 w-full">
-                {/* Using regular HTML img tag for project thumbnail */}
                 <img
                   src={project.image || "https://placehold.co/600x400/333/teal?text=Project+Image"}
                   alt={project.title}
