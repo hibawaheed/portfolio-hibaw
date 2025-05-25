@@ -1,6 +1,6 @@
 This repo contains the initial version of hibaw.dev, my personal portfolio website. It includes all pages, components, and assets used during development and production.
 It also contains extra pages, models and ideas that were made during the dev stage
-In apps, the pages displayed are only home, about, journal, and projects - the rest are rejected work
+In apps, the pages displayed are only home, about, journal, and projects 
 Similarly in the components much of the work is simply a prototype that is not being used in the final, current active website
 This code only reflects the website dev till 26/05/2025 which consists of much of the major layout - further changes in journal or projects page regarding updates may not be reflected
 
