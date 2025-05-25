@@ -11,7 +11,6 @@ import {
 } from "@/components/animations"
 
 export default function HomePage() {
-  // DIRECTLY EDIT THESE SKILLS - Changes will be reflected when you deploy
   const skills = [
     {
       icon: <Code className="h-12 w-12 text-teal-400" />,
@@ -38,7 +37,6 @@ export default function HomePage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Hero Section - DIRECTLY EDIT TEXT HERE */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-teal-950/20 to-black opacity-80" />
@@ -51,14 +49,12 @@ export default function HomePage() {
             <SlideInLeft className="max-w-xl text-center md:text-left md:pr-4 md:flex-1">
               <TextReveal delay={0.3}>
                 <h2 className="mb-8 text-4xl font-bold tracking-tight text-white md:text-6xl">
-                  {/* EDIT THIS TEXT DIRECTLY */}
                   <span className="block mb-2 cursor-blink">Hi, I'm </span>
                   <span className="text-gradient">Hiba Waheed</span>
                 </h2>
               </TextReveal>
               <FadeIn delay={0.6}>
                 <p className="mb-10 text-lg leading-relaxed text-gray-300 code-text">
-                  {/* EDIT THIS TEXT DIRECTLY */}
                   Welcome to my digital corner of the internet. I'm an IT student who's into coding, tech, and building
                   things that (hopefully) work. Always exploring new tools, solving problems, and learning as I go.
                 </p>
@@ -87,12 +83,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Skills Preview - DIRECTLY EDIT CONTENT ABOVE IN THE SKILLS ARRAY */}
+      
       <section className="bg-gray-950 py-24">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
-            {/* EDIT THIS TEXT DIRECTLY */}
             <h2 className="mb-16 text-center text-3xl font-bold text-white terminal-text">My Technical Toolkit</h2>
           </ScrollAnimation>
 
