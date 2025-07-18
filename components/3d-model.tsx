@@ -9,15 +9,15 @@ function Model({ url, scale = 1 }) {
   const ref = useRef<THREE.Group>(null)
   const { scene } = useGLTF(url)
 
-  // Clone and prepare the scene
+  //clone+prep grah
   const model = scene.clone()
 
-  // Explicitly rotate to face forward
+  //rotate 
   model.rotation.set(0, Math.PI, 0)
 
   useFrame((state) => {
     if (ref.current) {
-      // Simple bobbing animation
+      //anima
       ref.current.position.y = Math.sin(state.clock.getElapsedTime()) * 0.1
     }
   })
@@ -52,7 +52,7 @@ export default function ModelViewer({
         <spotLight position={[0, 5, 10]} angle={0.3} penumbra={1} intensity={1} />
         <directionalLight position={[0, 5, 5]} intensity={0.5} />
 
-        {/* Center the model in the scene */}
+        {/* center */}
         <group position={[0, 0, 0]}>
           <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.8}>
             <Model url={modelUrl} scale={scale} />
